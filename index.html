@@ -1,0 +1,446 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href= 
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+        <title>Ryhmätyö</title>
+    </head>
+
+    <body>
+        <div class="smartphone">
+            <div class="content">
+                <div id="header">
+                    <div id="Otsikko">APP-NAME</div>
+                    <div class="settings">
+                        <button id="settings-btn" onclick="openDropdown()">
+                                <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="myDropdown" class="dropdown">
+							<ul id="valikkoEiKirjautunut">
+								 <li><a href="#" onclick="openSivu('uutiset')">Uusimmat tiedot</a></li>
+								 <li><a href="#">Tilannekartta</a></li>
+								 <li><a href="#" onclick="openSivu('virusinfo')">Kaikki viruksesta</a></li>
+								 <li><a href="#" onclick="arvoiHoitoTarve()">Tee hoitotarvearvio</a></li>
+								 <!--<li><a href="#" onclick="openSivu('omattiedot')">Omat tiedot</a></li>-->
+								 <li>---</li>
+								 <li><a href="#" onclick="openSivu('luoTunnus')">Luo käyttäjätunnus</a></li>
+								 <li><a href="#" onclick="openSivu('kirjauduTaiLuoTunnus')">Kirjaudu sisään</a></li>
+								 
+                    </ul>
+                    <ul id="valikkoKirjautunut" style="display:none">
+								 <li><a href="#" onclick="openSivu('uutiset')">Uusimmat tiedot</a></li>
+								 <li><a href="#">Tilannekartta</a></li>
+								 <li><a href="#" onclick="openSivu('virusinfo')">Kaikki viruksesta</a></li>
+								 <li><a href="#" onclick="openSivu('hoitotarvekysely')">Tee hoitotarvearvio</a></li>
+								 <li>---</li>
+								 <li>
+									<svg id="profiilikuva" height="20" width="20">
+										<circle cx="10" cy="7" r="5" stroke="none" fill="#b6a3a3" />
+										<rect x="2" y="12" width="16" height="7" sroke="none" fill="#b6a3a3" />
+									</svg>
+									<span style="font-weight:bold;">Matti69</span>
+								 </li>
+								 <li><a href="#" onclick="openSivu('omattiedot')">Omat tiedot</a></li>
+								 <li><a href="#" onclick="logOut()">Kirjaudu ulos</a></li>
+                    </ul>
+                </div>
+
+                <div id="body">
+						
+						<div id="kirjautumisStatus">
+							<span>Olet kirjautunut käyttäjänä <span id="kirjautunutTunnus">Matti69</span></span>
+						</div>
+						
+                    <div id="uutiset">
+						  
+								<div id="huoliboksi">
+									<span>Oletko huolestunut?</span>
+									<br>
+									<button id="btnKirjaudu" onclick="arvoiHoitoTarve()">Arvioi hoitotarpeesi!</button>
+								</div>
+								
+								<p><b>Yleiskatsaus</b></p>
+								
+								<table id="yleiskatsausTaulukko">
+									<tr>
+										<th></th>
+										<th><b>Vahvistetut</b></th>
+										<th><b>Parantuneet</b></th>
+										<th><b>Kuolemat</b></th>
+									</tr>
+									<tr>
+										<td>
+											<b>Maailma</b>
+										</td>
+										<td>
+											4,35 milj.
+										</td>
+										<td>
+											1,55 milj.
+										</td>
+										<td>
+											297 t.
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<b>Suomi</b>
+										</td>
+										<td>
+											6054
+										</td>
+										<td>
+											4300
+										</td>
+										<td>
+											284
+										</td>
+									</tr>
+								</table>
+
+                        <p><b>Uusimmat päivitykset tilanteesta</b></p>
+
+                        <p>
+                            <b>1.5.2020 Otsikko</b><br>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
+                            laudantium, totam rem aperiam. <!--eaque ipsa quae ab illo inventore veritatis et quasi 
+                            architecto beatae vitae dicta sunt explicabo.-->
+                        </p>
+                        
+                        <p>
+                            <b>28.4.2020 Otsikko</b><br>
+                            Nemo enim ipsam voluptatem quia voluptas 
+                            sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+                            voluptatem sequi nesciunt.<!-- Neque porro quisquam est, qui dolorem ipsum quia dolor sit 
+                            amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut 
+                            labore et dolore magnam aliquam quaerat voluptatem.-->
+                        </p>
+                        
+								<div id="lueLisaaNappula">Lue vanhemmat</div>
+								
+								<!--
+                        <p>
+                            <b>24.4.2020 Otsikko</b><br>
+                            Ut enim ad minima veniam, quis nostrum 
+                            exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? 
+                            Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae 
+                            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
+                        </p>
+								-->
+                    </div>
+
+						  <div id="kirjauduTaiLuoTunnus">
+								<div>
+									<span style="font-size:0.8em;">Käyttäjätunnus</span>
+									<input id="usernameInputKirjaudu" type="text">
+									<span style="font-size:0.8em;">Salasana</span>
+									<div style="display:flex; flex-direction:row; margin-bottom: 20px;">
+										<input id="kirjauduSalasana" type="password" style="margin-top:0px; width:270px;">
+										<svg class="salasanasimmu disabled" width="30" height="30" version="1.1" viewBox="0 0 7.937 7.938" onclick="togglePasswordMode(this, 'kirjauduSalasana')">
+											 <g transform="translate(0 -289.1)">
+											  <ellipse cx="3.969" cy="293" rx="1.588" ry="1.587" fill="none" stroke="#000" stroke-width=".265" style="paint-order:fill markers stroke"/>
+											  <circle cx="3.969" cy="293" r=".5292" stroke="#000" stroke-width=".529" style="paint-order:fill markers stroke"/>
+											  <path d="m0.5292 293c2.438 3.087 4.706 2.547 6.879 0-2.174-2.547-4.441-3.087-6.879 0z" fill="none" stroke="#000" stroke-width=".265"/>
+											  <circle cx="4.217" cy="292.8" r=".1819" fill="#fbfbfb" stroke="#fff" stroke-width=".265" style="paint-order:fill markers stroke"/>
+											 </g>
+											</svg>
+									</div>
+									<span id="tarkistaTunnusJaPassu" style="color:red; text-align:right; font-size:0.8em; visibility:hidden;">Tarkista käyttäjätunnus ja salasana</span>
+									<button id="btnKirjaudu" onclick="logIn('usernameInputKirjaudu', 'kirjauduSalasana')">Kirjaudu sisään</button>
+									<!-- -->
+									<span id="lblEiTunnusta">Ei käyttäjätunnusta?</span>
+									<button id="btnLuoTunnus" onclick="openSivu('luoTunnus')">Luo tunnus</button>
+								</div>
+							</div>
+							
+							<div id="luoTunnus">
+								<div>
+									<span>Käyttäjätunnus</span>
+									<input type="text">
+									<span style="font-size:0.9em; opacity:0.5; text-align: right;" >Väh. 6 merkkiä</span>
+									<span>Salasana</span>
+									<div style="display:flex; flex-direction:row">
+										<input id="luoTunnusSalasana" type="password" style="margin-top:0px; width:270px;">
+										<svg class="salasanasimmu disabled" width="30" height="30" version="1.1" viewBox="0 0 7.937 7.938" onclick="togglePasswordMode(this, 'luoTunnusSalasana')">
+											 <g transform="translate(0 -289.1)">
+											  <ellipse cx="3.969" cy="293" rx="1.588" ry="1.587" fill="none" stroke="#000" stroke-width=".265" style="paint-order:fill markers stroke"/>
+											  <circle cx="3.969" cy="293" r=".5292" stroke="#000" stroke-width=".529" style="paint-order:fill markers stroke"/>
+											  <path d="m0.5292 293c2.438 3.087 4.706 2.547 6.879 0-2.174-2.547-4.441-3.087-6.879 0z" fill="none" stroke="#000" stroke-width=".265"/>
+											  <circle cx="4.217" cy="292.8" r=".1819" fill="#fbfbfb" stroke="#fff" stroke-width=".265" style="paint-order:fill markers stroke"/>
+											 </g>
+											</svg>
+									</div>
+									<span style="font-size:0.9em; opacity:0.5; text-align: right;" >Väh. 12 merkkiä</span>
+									<span style="margin-top:25px;" >Etunimi</span>
+									<input type="text">
+									<span>Sukunimi</span>
+									<input type="text">
+									<span style="margin-top:25px;" >Ikä</span>
+									<span id="ageValue" style="text-align:center; font-size:1.2em; font-weight:bold;">75</span>
+									<input type="range" min="0" max="150" value="75" oninput="updateAgeInput(this.value);">
+									<button id="btnLuoTunnus" onclick="createAccount()">Luo käyttäjätunnus</button>
+								</div>
+							</div>
+
+                    <div id="hoitotarvekysely" style="padding-left:20px; padding-right:20px;">
+                        <p><b>Arvioi hoitotarpeesi</b></p>
+                        <p style="font-size:0.8em;">Vastaa alla oleviin kysymyksiin ja saat vastauksena hoitotarvearvion.</p>
+								<p style="margin-top:20px; padding:10px;">
+                            <b>1) Ruksi alla olevasta listasta oireita, joita sinulla on</b><br>
+                            <table id="table1" style="font-size:0.9em;">
+                                <tr>
+                                    <th><input type="checkbox" id="yska" name="yska" value="yska">yskä</th>
+                                    <th><input type="checkbox" id="hengenahdistus" name="hengenahdistus" value="hengenahdistus">hengenahdistus</th>
+                                </tr>
+                                <tr>
+                                    <th><input type="checkbox" id="lihaskivut" name="lihaskivut" value="lihaskivut">lihaskivut</th>
+                                    <th><input type="checkbox" id="vasymys" name="vasymys" value="vasymys">väsymys</th>
+                                </tr>
+                                <tr>
+                                    <th><input type="checkbox" id="nuha" name="nuha" value="nuha">nuha</th>
+                                    <th><input type="checkbox" id="pahoinvointi" name="pahoinvointi" value="pahoinvointi">pahoinvointi</th>
+                                </tr>
+                            </table>
+                        </p>
+                        <div id="kuumeSektio">
+                            <div><b>2) Ota kuumemittari ja mittaa lämpösi. Valitse alta lähin lämpötila</b></div>
+                                    
+                                <!--
+                                <table id="table2">
+                                    <tr>
+                                        <th>35-36.6°</th>
+                                        <th>36.7-37.9°</th>
+                                        <th>38-39.9°</th>
+                                        <th>40°+</th>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="radio" name="lampoTila" value="35-36.6"></th>
+                                        <th><input type="radio" name="lampoTila" value="36.7-37.9"></th>
+                                        <th><input type="radio" name="lampoTila" value="38-39.9"></th>
+                                        <th><input type="radio" name="lampoTila" value="38-39.9"></th>
+                                    </tr>
+                                </table>
+										  -->
+										<br>
+										<span id="temperatureValue" style="text-align:center; font-size:1.2em; font-weight:bold;">37.0°</span>
+										<br>
+										<input type="range" min="34.0" max="42.0" value="37.0" step="0.1" style="width:90%;" oninput="updateTemperatureInput(this.value)">
+                        </div>
+
+                        <div id="vointiSektio">
+                            <div><b>3) Asteikolla 1-10, kuinka huonoksi tunnet vointisi?</b></div>
+                            <div id="value" style="text-align:center; font-size:1.2em; font-weight:bold;">#arvoNotSet</div>
+                            <input id="slider" type="range" name="rangeInput" min="0" max="10" value="5" oninput="updateTextInput(this.value);">
+                        </div>
+                        
+                        <div id="vastauksenLahetys">
+                            <button id="laheta-btn" onclick="openSivu('arviotulos')">Anna arvio</button>
+                        </div>
+                                  
+                    </div>
+
+                    <div id="arviotulos">
+									<br>
+                            <b>Vastauksiesi perusteella arvioitu hoitotarpeesi on tällä hetkellä:</b>
+                            <h3>Ei vakava</h3>
+                            <p>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+                                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
+                                sunt explicabo. 
+                            </p>
+                            <div id="vastauksenLahetys">
+                                    <button id="laheta-btn" onclick="openSivu('omattiedot')">Mene omiin tietoihin</button>
+                            </div>
+                            
+                    </div>
+
+                    <div id="omattiedot">
+								<div style="margin-top:25px;">
+									<b>Omat henkilötiedot</b>
+									<div style="margin-top:5px; font-size:0.9em;">
+										 <b>Etunimi:</b> Matti<br>
+										 <b>Sukunimi:</b> Mäkinen<br>
+										 <b>Ikä:</b> 48<br>
+										 <!--<b>Riskiryhmä:</b> Ei riskiryhmässä-->
+									</div>
+								</div>
+								<div style="margin-top:25px;">
+									<b>Annetut riskitekijät</b>
+									<div style="margin-top:5px; font-size:0.9em;">
+										 Korkea verenpaine<br>
+										 Diabetes<br>
+										 <!--<b>Riskiryhmä:</b> Ei riskiryhmässä-->
+									</div>
+								</div>
+								
+								<div id="omienTietojenMuokkaus">
+                            <button id="muokkaa-omia-tietoja-btn" onclick="openSivu('')">Muokkaa omia tietoja</button>
+                        </div>
+								
+								<div style="margin-top:25px;">
+                            <b>Viimeisimmän hoitotarvearvion tulos: </b>
+									 <div style="margin-top:5px; font-size:0.9em;">
+										Ei vakava
+									</div>
+                        </div>
+																
+								<div id="tunnuksenPoistaminen">
+									<p style="text-align:left;">
+										<b style="font-size:1.2em;">Käyttäjätunnuksen poistaminen</b>
+										<br>
+										Alla olevasta painikkeesta käyttäjätunnuksesi ja kaikki siihen liittyvä tieto poistetaan sovelluksesta.
+									</p>
+                            <button id="poista-tunnus-btn" onclick="openSivu('')">Poista käyttäjätunnus</button>
+                        </div>
+								
+                    </div>
+
+                    <div id="virusinfo">
+                        <p style="font-size:1.1em;"><b>Kaikki viruksesta</b></p>
+								<div style="font-size:0.9em;">
+									<b>Yleisesti</b>
+									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+									totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
+									sunt explicabo.</p>
+
+									<b>Kuinka suojautua</b>
+									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+									totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
+									sunt explicabo.</p>
+								</div>
+                    </div>
+                </div>                    
+            </div>
+        </div>
+    </body>  
+
+    <script>
+	 
+			var isLoggedIn = false;
+			var isWorried = false;
+	 
+        updateTextInput(document.getElementById('slider').value);
+
+        //Määritellään elementtejä
+        var dropdown = document.getElementById("myDropdown");
+
+        var uutiset = document.getElementById("uutiset");
+		  var kirjauduTaiLuoTunnus = document.getElementById("kirjauduTaiLuoTunnus");
+		  var luoTunnus = document.getElementById("luoTunnus");
+        var hoitokysely = document.getElementById("hoitotarvekysely");
+        var arviotulos = document.getElementById("arviotulos");
+        var omattiedot = document.getElementById("omattiedot");
+        var virusinfo = document.getElementById("virusinfo");
+			// ---
+			var valikkoEiKirjautunut = document.getElementById("valikkoEiKirjautunut")
+			var valikkoKirjautunut = document.getElementById("valikkoKirjautunut")
+
+			//  QuickFix: openDropdown ei aukea ensimmäisellä kerralla
+			dropdown.style.display = "none"
+
+        function openDropdown() {
+            if (dropdown.style.display === "none") {
+                dropdown.style.display = "block";
+            } else {
+                dropdown.style.display = "none";
+            }
+        }
+
+        function openSivu(sivuId) {
+            var x = document.getElementById(sivuId)
+
+            //Suljetaan kaikki ikkunat
+            dropdown.style.display = "none";
+            uutiset.style.display = "none";
+				kirjauduTaiLuoTunnus.style.display = "none";
+				luoTunnus.style.display = "none";
+            hoitokysely.style.display = "none";
+            arviotulos.style.display = "none";
+            omattiedot.style.display = "none";
+            virusinfo.style.display = "none";
+
+            //Avataan annettu ikkuna
+            x.style.display = "block";
+				
+				// Quick and Dirty Fix...
+				document.getElementById("tarkistaTunnusJaPassu").style.visibility = "hidden";
+				document.getElementById("usernameInputKirjaudu").value = "";
+				document.getElementById("kirjauduSalasana").value = "";
+        }
+
+        //slider value listener
+        function updateTextInput(val) {
+          var x = document.getElementById("value");
+
+          x.innerHTML = val;
+        }
+		  
+		  function logIn( usernameElement, passwordElement ) {
+				var minimumLength = 5; // '-1' hyväksyy kirjautumisen ilman tunnusta ja salasanaa
+				if( document.getElementById(usernameElement).value.length > minimumLength && document.getElementById(passwordElement).value.length > minimumLength ) {
+					isLoggedIn = true;
+					valikkoEiKirjautunut.style.display = "none";
+					valikkoKirjautunut.style.display = "block";
+					kirjautumisStatus.style.display = "block";
+					if(isWorried) {
+						isWorried = false;
+						arvoiHoitoTarve();
+					}
+					else {
+						openSivu('uutiset');
+					}
+					document.getElementById("tarkistaTunnusJaPassu").style.visibility = "hidden";
+				}
+				else {
+					document.getElementById("tarkistaTunnusJaPassu").style.visibility = "visible";
+				}
+		  }
+		  
+		  function logOut() {
+				isLoggedIn = false;
+				valikkoEiKirjautunut.style.display = "block";
+				valikkoKirjautunut.style.display = "none";
+				kirjautumisStatus.style.display = "none";
+				openSivu('uutiset');
+		  }
+		  
+		  function createAccount() {
+				logIn();
+		  }
+		  
+		  function arvoiHoitoTarve() {
+				if(isLoggedIn) {
+					openSivu('hoitotarvekysely');
+				}else {
+					isWorried = true;
+					openSivu('kirjauduTaiLuoTunnus')
+				}
+		  }
+		  
+		  function updateAgeInput(ageValue) {
+				document.getElementById("ageValue").innerHTML = ageValue;
+		  }
+		  
+		  function updateTemperatureInput(temperatureValue) {
+			document.getElementById("temperatureValue").innerHTML = temperatureValue + "°";
+		  }
+		  
+		  function togglePasswordMode(simmu, inputElement) {
+				simmu.classList.toggle("disabled")
+				if(simmu.classList.contains("disabled")) {
+					document.getElementById(inputElement).setAttribute("type", "password")
+				}
+				else {
+					document.getElementById(inputElement).setAttribute("type", "text")
+				}
+		  }
+		  
+    </script>
+                   
+</html>
